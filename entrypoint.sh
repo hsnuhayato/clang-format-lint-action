@@ -2,5 +2,5 @@
 
 cd "$GITHUB_WORKSPACE"
 
-/run-clang-format.py "$@" \
-    | reviewdog -efm="%f:%l: %m" -name="clang-format-lint-action" -filter-mode=nofilter
+/run-clang-format.py "$@"
+# \ | reviewdog -efm="%f:%l: %m" -name="clang-format-lint-action" -filter-mode=nofilter
