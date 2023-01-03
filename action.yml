@@ -2,7 +2,7 @@ name: 'clang-format lint'
 author: 'Slobodan Kletnikov (DoozyX)'
 description: 'Github Action that check if code is formatted correctly using clang-format'
 branding:
-  icon: 'align-left'
+  icon: 'check'
   color: 'green'
 inputs:
   github_token:
@@ -50,6 +50,3 @@ runs:
     - --exclude
     - ${{ inputs.exclude }}
     - ${{ inputs.source }}
-branding:
-  icon: 'check-circle'
-  color: 'blue'
