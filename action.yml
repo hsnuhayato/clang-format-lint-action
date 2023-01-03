@@ -32,9 +32,39 @@ inputs:
     description: 'Just fix files (`clang-format -i`) instead of returning a diff'
     required: false
     default: False
+  level:
+    description: "Report level for reviewdog [info,warning,error]"
+    required: false
+    default: "error"
+  reporter:
+    description: "Reporter of reviewdog command [github-pr-check,github-pr-review]."
+    required: false
+    default: "github-pr-check"
+  filter_mode:
+    description: |
+      Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
+      Default is added.
+    required: false
+    default: "added"
+  fail_on_error:
+    description: |
+      Exit code for reviewdog when errors are found [true,false]
+      Default is `false`.
+    required: false
+    default: "false"
+  reviewdog_flags:
+    description: "Additional reviewdog flags"
+    required: false
+    default: ""
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    INPUT_LEVEL: ${{ inputs.level }}
+    INPUT_REPORTER: ${{ inputs.reporter }}
+    INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
+    INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
+    INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
   args:
     - --clang-format-executable
     - /clang-format/clang-format${{ inputs.clangFormatVersion }}
