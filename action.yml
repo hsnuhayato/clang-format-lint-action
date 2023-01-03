@@ -7,7 +7,7 @@ branding:
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
-    default: '${{ secrets.GITHUB_TOKEN }}'
+    required: true
   source:
     description: 'Source folder to check formatting'
     required: false
