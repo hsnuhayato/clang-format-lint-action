@@ -10,7 +10,6 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
               -filter-mode="${INPUT_FILTER_MODE}" \
               -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
               -level="${INPUT_LEVEL}" \
-              -f.diff.strip=0 \
               ${INPUT_REVIEWDOG_FLAGS}
               #|| exit_val="$?"
 
