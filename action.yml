@@ -50,3 +50,6 @@ runs:
     - --exclude
     - ${{ inputs.exclude }}
     - ${{ inputs.source }}
+branding:
+  icon: 'check-circle'
+  color: 'blue'
