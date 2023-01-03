@@ -24,6 +24,10 @@ inputs:
     description: 'Version of clang-format'
     required: false
     default: '9'
+  color:
+    description: 'Show color diff'
+    required: false
+    default: 'never'
   style:
     description: 'Formatting style to use'
     required: false
@@ -71,7 +75,7 @@ runs:
     - /clang-format/clang-format${{ inputs.clangFormatVersion }}
     - -r
     - --color
-    - always
+    - ${{ inputs.color }}
     - --style
     - ${{ inputs.style }}
     - --inplace
