@@ -3,4 +3,4 @@
 cd "$GITHUB_WORKSPACE"
 
 /run-clang-format.py "$@" 2>&1 \
-    | reviewdog -efm="%f:%l: %m" -name="clang-format-lint-action" -filter-mode=nofilter
+    | reviewdog -name="clang-format-lint-action" -filter-mode="file" -f="diff"
