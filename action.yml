@@ -60,6 +60,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
+    INPUT_GITHUG_TOKEN: ${{ inputs.github_token }}
     INPUT_LEVEL: ${{ inputs.level }}
     INPUT_REPORTER: ${{ inputs.reporter }}
     INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
